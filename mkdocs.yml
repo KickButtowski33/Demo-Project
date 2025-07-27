@@ -1,0 +1,7 @@
+site_name: Dhanush site_name
+theme:
+  name: material
+nav:
+  - Home: index.md
+  - About: about.md
+  - 'Getting Started': tutorials.md
