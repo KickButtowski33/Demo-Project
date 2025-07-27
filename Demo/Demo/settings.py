@@ -10,7 +10,19 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 
+from dotenv import load_dotenv
+import os
 from pathlib import Path
+
+# Load .env file
+BASE_DIR = Path(__file__).resolve().parent.parent
+load_dotenv(dotenv_path=BASE_DIR / ".env")  # or just load_dotenv() if .env is in root
+
+# Access AWS credentials
+AWS_ACCESS_KEY_ID = os.getenv("AWS_ACCESS_KEY_ID")
+AWS_SECRET_ACCESS_KEY = os.getenv("AWS_SECRET_ACCESS_KEY")
+AWS_DEFAULT_REGION = os.getenv("AWS_DEFAULT_REGION")
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -26,6 +38,7 @@ SECRET_KEY = 'django-insecure-m%d=p(wl0%kom*l_^pdw_qb0eufqh^o*3d9lk=zrwtfp3#kjs$
 DEBUG = True
 
 ALLOWED_HOSTS = []
+
 
 
 # Application definition
